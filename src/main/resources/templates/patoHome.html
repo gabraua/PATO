@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Imagem</title>
+</head>
+<body>
+    <h1>Imagem da API</h1>
+    <!-- A URL da imagem será preenchida dinamicamente -->
+    <img th:src="${imageUrl}" alt="Imagem da API" />
+    
+    <!-- Formulário para atualizar a imagem -->
+    <form action="/pato" method="GET">
+        <button type="submit">Atualizar Imagem</button>
+    </form>
+</body>
+</html>

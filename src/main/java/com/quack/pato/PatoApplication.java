@@ -12,8 +12,7 @@ public class PatoApplication {
 		SpringApplication.run(PatoApplication.class, args);
 		Principal principal = new Principal();
 		principal.exibeMenu();
+
 	}
-	
-	
 
 }

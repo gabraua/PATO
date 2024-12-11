@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exibir Imagem</title>
+    <title>Pato</title>
+    <script>
+        function atualizarTextoBotao(botao) {
+            botao.textContent = "Gerando um pato";
+        }
+    </script>
 </head>
 <body>
-    <h1>Imagem da API</h1>
-    <!-- A URL da imagem será preenchida dinamicamente -->
-    <img th:src="${imageUrl}" alt="Imagem da API" />
-    
-    <!-- Formulário para atualizar a imagem -->
+    <div th:if="${url != null}">
+        <h2>Pato</h2>
+        <img th:src="${url}" alt="Imagem do Pato" />
+    </div>
     <form action="/pato" method="GET">
-        <button type="submit">Atualizar Imagem</button>
+        <!-- O botão chama a função JavaScript ao ser clicado -->
+        <button type="submit" onclick="atualizarTextoBotao(this)">Gerar Pato</button>
     </form>
 </body>
 </html>

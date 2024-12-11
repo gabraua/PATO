@@ -1,6 +1,8 @@
 package com.quack.pato.principal;
 
+import com.quack.pato.model.DadosApi;
 import com.quack.pato.service.ConsumoApi;
+import com.quack.pato.service.ConvertePatos;
 
 public class Principal {
 
@@ -9,7 +11,10 @@ public class Principal {
 
 	public void exibeMenu() {
 		var json = consumo.obterDados(URL_BASE);
-		System.out.println("Dados recebidos da API: " + json);
+		System.out.println("json: " + json);
+		
+		ConvertePatos conversor = new ConvertePatos();
+		DadosApi dados = conversor.obterDados(json, DadosApi.class);
+		System.out.println(dados);
 	}
 }
-

@@ -10,8 +10,7 @@ public class PatoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PatoApplication.class, args);
-		Principal principal = new Principal();
-		principal.exibeMenu();
+
 
 	}
 

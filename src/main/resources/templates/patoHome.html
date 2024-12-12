@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pato</title>
-    <script>
-        function atualizarTextoBotao(botao) {
-            botao.textContent = "Gerando um pato";
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pato</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	background-color: #f0f8ff;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	color: #0077b6;
+}
+
+img {
+	max-width: 300px;
+	border: 2px solid #0077b6;
+	border-radius: 10px;
+	margin: 20px auto;
+}
+
+img.logo {
+	max-width: 200px;
+	border: 0;
+	margin: 20px auto;
+	display: block;
+	margin: 20px auto;
+}
+
+button {
+	background-color: #0077b6; /* Cor de fundo */
+	color: white; /* Cor do texto */
+	border: none; /* Sem bordas */
+	padding: 15px 15px; /* Aumentar o espaçamento */
+	border-radius: 10%; /* Tornar o botão redondo */
+	font-size: 16px; /* Tamanho do texto */
+	cursor: pointer; /* Ícone de mão ao passar o mouse */
+	transition: all 0.3s ease; /* Transição suave para efeitos */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+button:hover {
+	background-color: #005f91; /* Cor de fundo ao passar o mouse */
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Intensificar sombra */
+	transform: scale(1.05); /* Aumentar levemente o botão */
+}
+
+form {
+	margin: 20px;
+}
+</style>
+<script>
+	function atualizarTextoBotao(botao) {
+		botao.textContent = "Gerando um pato...";
+		// Permitir que o formulário continue enviando normalmente
+	}
+</script>
 </head>
 <body>
-    <div th:if="${url != null}">
-        <h2>Pato</h2>
-        <img th:src="${url}" alt="Imagem do Pato" />
-    </div>
-    <form action="/pato" method="GET">
-        <!-- O botão chama a função JavaScript ao ser clicado -->
-        <button type="submit" onclick="atualizarTextoBotao(this)">Gerar Pato</button>
-    </form>
-</body>
-</html>
+	<img src="/images/dancing-duck.gif" alt="gif do pato" class="logo" />
+
+	<form action="/pato" method="GET">
+		<button type="submit" onclick="atualizarTextoBotao(this)">Clica aqui</button>
+		<div th:if="${url != null}">
+			<img th:src="${url}" alt="Imagem do Pato" />
+		</div>

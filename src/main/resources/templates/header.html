@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header</title>
+</head>
+
+<body>
+<header th:fragment="header">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <img src="/images/dancing-duck.gif" alt="gif do pato" class="logo" />
+    <form action="/pato" method="GET">
+        <button type="submit" onclick="atualizarTextoBotao(this)">Quack</button>
+    </form>
+    <form action="/historico" method="GET">
+        <button type="submit">Meus patos</button>
+    </form>
+    <div th:if="${url != null}">
+        <img th:src="${url}" alt="Imagem do Pato" />
+    </div>
+</header>
+
+<body>
+
+</body>
+</body>
+</html>

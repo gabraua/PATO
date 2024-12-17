@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/css/styles.css" />
 <head>
-    <title>Gerenciador de URLs</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 50%;
-            margin: auto;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        form {
-            text-align: center;
-            margin: 20px;
-        }
-    </style>
+<title>Gerenciador de URLs</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+}
+
+table {
+	width: 50%;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 10px;
+	text-align: center;
+}
+
+form {
+	text-align: center;
+	margin: 20px;
+}
+</style>
 </head>
 <body>
-    <div th:replace="header :: header"></div>
-    <h1 style="text-align: center;">Gerenciador de URLs</h1>
-    
-    <!-- Formulário para adicionar URL -->
-    <form action="/addUrl" method="POST">
-        <input type="text" name="url" placeholder="Digite uma URL" required />
-        <button type="submit">Adicionar</button>
-    </form>
+	<header th:insert="~{header :: header}"></header>
 
-    <!-- Lista de URLs -->
-    <table>
-        <thead>
-            <tr>
-                <th>URLs</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="url : ${urls}">
-                <td th:text="${url}"></td>
-                <td>
-                    <form action="/removeUrl" method="POST" style="display: inline;">
-                        <input type="hidden" name="url" th:value="${url}" />
-                        <button type="submit">Remover</button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+	<h1 style="text-align: center;">Gerenciador de Patos</h1>
+
+
+	<!-- Lista de URLs -->
+	<table>
+		<thead>
+			<tr>
+				<th>Patos</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="url : ${urls}">
+				<td><img th:src="${url}" alt="Imagem do Pato" /></td>
+				<td>
+					<form action="/removeUrl" method="POST" style="display: inline;">
+						<input type="hidden" name="url" th:value="${url}" />
+						<button type="submit">Remover</button>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
-ml>

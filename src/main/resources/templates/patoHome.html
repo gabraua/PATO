@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pato</title>
+<link rel="stylesheet" href="/css/styles.css" />
 <script>
 	function atualizarTextoBotao(botao) {
 		botao.textContent = "Gerando um pato...";
@@ -11,12 +12,7 @@
 </script>
 </head>
 
-
 <body>
-    <div th:replace="header :: header"></div>
+   <header th:insert="~{header :: header}"></header>
 
-
-
-
-	
 </body>	

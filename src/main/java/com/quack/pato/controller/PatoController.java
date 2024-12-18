@@ -43,18 +43,15 @@ public class PatoController {
 		model.addAttribute("urls", url.getUrls());
 		return "patoList";
 	}
-
+	
 	@PostMapping("/removeUrl")
 	public String removeUrl(@RequestParam("url") String urlToRemove, Model model) {
-		// Remove a URL da lista
-		url.getUrls().removeIf(u -> u.equals(urlToRemove));
+	    // Supondo que 'url' seja um serviço ou repositório que manipula URLs
+	    url.getUrls().removeIf(u -> u.equals(urlToRemove));  // Remove a URL da lista
+	    model.addAttribute("urls", url.getUrls());  // Atualiza o modelo com a lista de URLs
 
-		// Atualiza a lista de URLs no modelo
-		model.addAttribute("urls", url.getUrls());
-
-		// Redireciona para a página da lista de URLs após a remoção
-		return "redirect:/urls";
-		// Redireciona para a página de listagem de URLs
+	    return "redirect:/historico";  // Redireciona para a lista de URLs
 	}
+
 
 }

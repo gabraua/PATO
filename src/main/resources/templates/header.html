@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Header</title>
+<link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="/css/styles.css" />
 </head>
-
 <body>
-	<header th:fragment="header">	
+	<header th:fragment="header">
 		<img src="/images/dancing-duck.gif" alt="gif do pato" class="logo" />
 		<form action="/pato" method="GET">
 			<button type="submit" onclick="atualizarTextoBotao(this)">Quack</button>
 		</form>
-		<form th:if="${url != null}" action="/historico" method="GET" >
-			<button  type="submit">Meus patos</button>
+		<form th:if="${url != null}" action="/historico" method="GET">
+			<button type="submit">Meus patos</button>
 		</form>
 		<div th:if="${url != null}">
 			<img th:src="${url}" alt="Imagem do Pato" />
 		</div>
 	</header>
-<body>
+</body>
 </html>

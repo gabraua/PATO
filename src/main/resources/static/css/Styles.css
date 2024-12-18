@@ -1,48 +1,107 @@
 body {
-	font-family: Arial, sans-serif;
-	text-align: center;
-	background-color: #f0f8ff;
-	margin: 0;
-	padding: 0;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    background-color: #d0f0c0; /* Tom de verde claro */
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
-	color: #0077b6;
+    color: #2c5f2d; /* Verde escuro */
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 img {
-	max-width: 300px;
-	border: 2px solid #0077b6;
-	border-radius: 10px;
-	margin: 20px auto;
+    max-width: 300px;
+    border: 3px solid #2c5f2d; /* Verde escuro */
+    border-radius: 15px; /* Bordas arredondadas maiores */
+    margin: 20px auto;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
 }
 
 img.logo {
-	max-width: 200px;
-	border: 0;
-	margin: 20px auto;
-	display: block;
-	margin: 20px auto;
+    max-width: 200px;
+    border: none;
+    margin: none;
+    box-shadow: none;
+    display: block;
 }
 
 button {
-	background-color: #0077b6; /* Cor de fundo */
-	color: white; /* Cor do texto */
-	border: none; /* Sem bordas */
-	padding: 15px 15px; /* Aumentar o espaçamento */
-	border-radius: 10%; /* Tornar o botão redondo */
-	font-size: 16px; /* Tamanho do texto */
-	cursor: pointer; /* Ícone de mão ao passar o mouse */
-	transition: all 0.3s ease; /* Transição suave para efeitos */
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    background-color: #ffa62b; /* Laranja suave */
+    color: #2c5f2d; /* Verde escuro */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px; /* Botão arredondado */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
 button:hover {
-	background-color: #005f91; /* Cor de fundo ao passar o mouse */
-	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Intensificar sombra */
-	transform: scale(1.05); /* Aumentar levemente o botão */
+    background-color: #ff8c00; /* Tom de laranja mais escuro */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1); /* Aumentar levemente o botão */
 }
 
 form {
-	margin: 20px;
+    margin: 20px;
+}
+
+/* Estilos para a tabela */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para a tabela */
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #2c5f2d; /* Cor das bordas */
+}
+
+th {
+    background-color: #2c5f2d; /* Cabeçalho com o verde escuro */
+    color: white;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f8ff; /* Cor de fundo para as linhas pares */
+}
+
+tr:hover {
+    background-color: #e0f7fa; /* Cor ao passar o mouse sobre as linhas */
+}
+
+/* Estilos para o botão de remoção */
+button.remove {
+    background-color: #ff4d4d; /* Vermelho para remover */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+button.remove:hover {
+    background-color: #e60000; /* Vermelho mais forte ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    background-color: #2c5f2d; /* Verde escuro */
+    color: white;
+    padding: 10px 0;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
